@@ -6,21 +6,11 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 19:21:17 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/27 19:38:28 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/12/12 16:55:38 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-
-size_t	ft_strlen(char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 size_t	ft_strlen_until_nl(char *s, ssize_t *nl_i)
 {
@@ -35,20 +25,6 @@ size_t	ft_strlen_until_nl(char *s, ssize_t *nl_i)
 		i++;
 	}
 	return (i);
-}
-
-void	*ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-	char	*arr;
-
-	if (!n)
-		return (s);
-	arr = (char *) s;
-	i = 0;
-	while (i < n)
-		arr[i++] = 0;
-	return (s);
 }
 
 char	*ft_strdup_until_nl(char *src, ssize_t *nl_i)
