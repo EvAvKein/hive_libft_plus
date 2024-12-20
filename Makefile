@@ -6,7 +6,7 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2024/12/12 16:24:05 by ekeinan          ###   ########.fr        #
+#    Updated: 2024/12/20 17:59:44 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJ) $(LIB)
 	ar -rcs $(NAME) $(OBJ)
 
 $(LIB):
-	@make -C ./libft
+	@make bonus -C ./libft
 	cp ./libft/$(LIB) ./
 
 clean:
