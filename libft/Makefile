@@ -6,7 +6,7 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2025/01/01 17:02:02 by ekeinan          ###   ########.fr        #
+#    Updated: 2025/01/02 13:09:36 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,15 +71,15 @@ all: $(NAME)
 $(NAME): $(OBJ_CORE)
 	ar -rcs $(NAME) $(OBJ_CORE)
 
-bonus: ${BONUS_NAME}
+bonus: $(BONUS_NAME)
 
-${BONUS_NAME}: $(OBJ_CORE) $(OBJ_BONUS)
+$(BONUS_NAME): $(OBJ_CORE) $(OBJ_BONUS)
 	ar -rcs $(NAME) $(OBJ_CORE) $(OBJ_BONUS)
-	@touch ${BONUS_NAME}
+	@touch $(BONUS_NAME)
 
 clean:
-	rm -f $(OBJ_CORE) ${OBJ_BONUS}
-	@rm -f ${BONUS_NAME}
+	rm -f $(OBJ_CORE) $(OBJ_BONUS)
+	@rm -f $(BONUS_NAME)
 
 fclean: clean
 	rm -f $(NAME)
