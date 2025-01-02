@@ -6,12 +6,14 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2024/12/20 17:59:44 by ekeinan          ###   ########.fr        #
+#    Updated: 2025/01/02 13:10:41 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft_full.a
-LIB = libft.a
+LIB_DIR = libft
+LIB_FILE = libft.a
+LIB_PATH = $(LIB_DIR)/$(LIB_FILE)
 
 SRC = ft_printf.c \
 	  increase_print_count.c \
@@ -31,23 +33,24 @@ all: $(NAME)
 %.o: %.c
 	cc $(COMPILE_FLAGS) -c $< -o $@
 
-$(NAME): $(OBJ) $(LIB)
-	@mv $(LIB) $(NAME)
-	ar -rcs $(NAME) $(OBJ)
+$(LIB_PATH):
+	@make bonus -C $(LIB_DIR) --no-print-directory
+	@cp $(LIB_PATH) ./
 
-$(LIB):
-	@make bonus -C ./libft
-	cp ./libft/$(LIB) ./
+$(NAME): $(OBJ) $(LIB_PATH)
+	@cp $(LIB_PATH) $(NAME)
+	ar -rcs $(NAME) $(OBJ)
+	@rm $(LIB_FILE)
 
 clean:
-	@cd libft && make $@
+	@make -C $(LIB_DIR) $@ --no-print-directory
 	rm -f $(OBJ)
 
 fclean: clean
-	@cd libft && make $@
+	@make -C $(LIB_DIR) $@ --no-print-directory
 	rm -f $(NAME)
 
 re: fclean all
-	@cd libft && make $@
+	@make -C $(LIB_DIR) $@ --no-print-directory
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
