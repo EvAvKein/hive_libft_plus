@@ -9,7 +9,7 @@ My complete Libft library for 42 Network's Hive Helsinki 🐝
 
 ## Description
 
-This repo is a combination of my [libft](https://github.com/EvAvKein/libft), [ft_printf](https://github.com/EvAvKein/ft_printf), and [get_next_line](https://github.com/EvAvKein/get_next_line). After passing these projects, we're allowed to use this in any project marked as "Libft authorized"!
+This repo is a combination of my [libft](https://github.com/EvAvKein/hive_libft), [ft_printf](https://github.com/EvAvKein/hive_ft_printf), and [get_next_line](https://github.com/EvAvKein/hive_get_next_line). After passing these projects, we're allowed to use this in any project marked as "Libft authorized"!
 
 ---
 
