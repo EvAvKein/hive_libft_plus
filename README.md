@@ -9,7 +9,14 @@ My complete Libft library for 42 Network's Hive Helsinki 🐝
 
 ## Description
 
-This repo is a combination of my [libft](https://github.com/EvAvKein/libft), [ft_printf](https://github.com/EvAvKein/ft_printf), and [get_next_line](https://github.com/EvAvKein/get_next_line). After passing these projects, we're allowed to use this in any project marked as "Libft authorized"!
+This repository is a combination of my [libft](https://github.com/EvAvKein/libft), [ft_printf](https://github.com/EvAvKein/ft_printf), and [get_next_line](https://github.com/EvAvKein/get_next_line), with the following upgrades:
+- `ft_printf` is now `ft_dprintf`:
+	-  Replicating `dprintf` instead of `printf`, it now accepts a parameter for the print destination (instead of always using STDIN)
+- `get_next_line` is now `set_next_line`:
+	- Provides the new line via a new parameter (pointer), and now the return value indicates whether there was a read error
+	- Assigns default `FILE_CAPACITY` to `FOPEN_MAX` if available
+
+We're allowed to use this combined (and optionally upgraded) libft in any project marked as "Libft authorized"!
 
 ---
 
