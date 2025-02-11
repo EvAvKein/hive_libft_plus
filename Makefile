@@ -6,7 +6,7 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2025/02/11 13:56:33 by ekeinan          ###   ########.fr        #
+#    Updated: 2025/02/11 15:49:52 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,10 @@ DPRINTF_SRC := ft_dprintf.c \
 			   print_hex.c
 DPRINTF_OBJ := $(DPRINTF_SRC:%.c=$(DPRINTF_DIR)/%.o)
 
-GNL_DIR := get_next_line
-GNL_SRC := get_next_line_bonus.c \
-		   get_next_line_utils_bonus.c
-GNL_OBJ := $(GNL_SRC:%.c=$(GNL_DIR)/%.o)
+SET_NEXT_LINE_DIR := set_next_line
+SET_NEXT_LINE_SRC := set_next_line.c \
+		  			 set_next_line_utils.c
+SET_NEXT_LINE_OBJ := $(SET_NEXT_LINE_SRC:%.c=$(SET_NEXT_LINE_DIR)/%.o)
 
 COMPILE_FLAGS := -Wall -Wextra -Werror -I$(LIBBASE_FILE)
 
@@ -40,13 +40,13 @@ all: $(NAME)
 $(LIBBASE_PATH):
 	@make bonus -C $(LIBBASE_DIR) --no-print-directory
 
-$(NAME): $(DPRINTF_OBJ) $(GNL_OBJ) $(LIBBASE_PATH)
+$(NAME): $(DPRINTF_OBJ) $(SET_NEXT_LINE_OBJ) $(LIBBASE_PATH)
 	@cp $(LIBBASE_PATH) $(NAME)
-	ar -rcs $(NAME) $(DPRINTF_OBJ) $(GNL_OBJ)
+	ar -rcs $(NAME) $(DPRINTF_OBJ) $(SET_NEXT_LINE_OBJ)
 
 clean:
 	@make -C $(LIBBASE_DIR) $@ --no-print-directory
-	rm -f $(DPRINTF_OBJ) $(GNL_OBJ)
+	rm -f $(DPRINTF_OBJ) $(SET_NEXT_LINE_OBJ)
 
 fclean: clean
 	@make -C $(LIBBASE_DIR) $@ --no-print-directory
