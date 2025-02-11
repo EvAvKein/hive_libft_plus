@@ -6,14 +6,14 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 09:52:30 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/12/24 21:09:19 by ekeinan          ###   ########.fr       */
+/*   Updated: 2025/02/11 13:07:35 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 // ^ for strlen and bzero, previously declared in get_next_line
 # include <unistd.h>
 # include <stdlib.h>

@@ -6,51 +6,56 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2025/01/02 13:10:41 by ekeinan          ###   ########.fr        #
+#    Updated: 2025/02/11 13:56:33 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft_full.a
-LIB_DIR = libft
-LIB_FILE = libft.a
-LIB_PATH = $(LIB_DIR)/$(LIB_FILE)
+NAME := libft_full.a
 
-SRC = ft_printf.c \
-	  increase_print_count.c \
-	  print_chars.c \
-	  print_int.c \
-	  print_ptr.c \
-	  print_hex.c \
-	  get_next_line_bonus.c \
-      get_next_line_utils_bonus.c
+LIBBASE_DIR := libft
+LIBBASE_FILE := libft.a
+LIBBASE_PATH := $(LIBBASE_DIR)/$(LIBBASE_FILE)
 
-OBJ = $(SRC:.c=.o)
+DPRINTF_DIR := ft_dprintf
+DPRINTF_SRC := ft_dprintf.c \
+			   increase_print_count.c \
+			   print_chars.c \
+			   print_int.c \
+			   print_ptr.c \
+			   print_hex.c
+DPRINTF_OBJ := $(DPRINTF_SRC:%.c=$(DPRINTF_DIR)/%.o)
 
-COMPILE_FLAGS = -Wall -Wextra -Werror
+GNL_DIR := get_next_line
+GNL_SRC := get_next_line_bonus.c \
+		   get_next_line_utils_bonus.c
+GNL_OBJ := $(GNL_SRC:%.c=$(GNL_DIR)/%.o)
+
+COMPILE_FLAGS := -Wall -Wextra -Werror -I$(LIBBASE_FILE)
 
 all: $(NAME)
 
 %.o: %.c
 	cc $(COMPILE_FLAGS) -c $< -o $@
+		
+$(LIBBASE_PATH):
+	@make bonus -C $(LIBBASE_DIR) --no-print-directory
 
-$(LIB_PATH):
-	@make bonus -C $(LIB_DIR) --no-print-directory
-	@cp $(LIB_PATH) ./
-
-$(NAME): $(OBJ) $(LIB_PATH)
-	@cp $(LIB_PATH) $(NAME)
-	ar -rcs $(NAME) $(OBJ)
-	@rm $(LIB_FILE)
+$(NAME): $(DPRINTF_OBJ) $(GNL_OBJ) $(LIBBASE_PATH)
+	@cp $(LIBBASE_PATH) $(NAME)
+	ar -rcs $(NAME) $(DPRINTF_OBJ) $(GNL_OBJ)
 
 clean:
-	@make -C $(LIB_DIR) $@ --no-print-directory
-	rm -f $(OBJ)
+	@make -C $(LIBBASE_DIR) $@ --no-print-directory
+	rm -f $(DPRINTF_OBJ) $(GNL_OBJ)
 
 fclean: clean
-	@make -C $(LIB_DIR) $@ --no-print-directory
+	@make -C $(LIBBASE_DIR) $@ --no-print-directory
 	rm -f $(NAME)
 
 re: fclean all
-	@make -C $(LIB_DIR) $@ --no-print-directory
+	@make -C $(LIBBASE_DIR) $@ --no-print-directory
+
+neat: $(NAME) clean
+	clear
 
 .PHONY: all clean fclean re
