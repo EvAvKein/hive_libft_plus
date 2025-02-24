@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_full.h                                       :+:      :+:    :+:   */
+/*   libft_plus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:32:42 by ekeinan           #+#    #+#             */
-/*   Updated: 2025/02/12 10:37:42 by ekeinan          ###   ########.fr       */
+/*   Updated: 2025/02/24 15:24:25 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_FULL_H
-# define LIBFT_FULL_H
+#ifndef LIBFT_PLUS_H
+# define LIBFT_PLUS_H
 
-# include "ft_dprintf/ft_dprintf.h"
-# include "set_next_line/set_next_line.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdbool.h>
+# include <stdint.h>
+# include <stdarg.h>
+
+# include "libft.h"
+# include "ft_dprintf.h"
+# include "set_next_line.h"
 
 #endif

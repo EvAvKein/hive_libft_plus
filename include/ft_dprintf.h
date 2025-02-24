@@ -6,18 +6,14 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:09:59 by ekeinan           #+#    #+#             */
-/*   Updated: 2025/02/11 14:03:00 by ekeinan          ###   ########.fr       */
+/*   Updated: 2025/02/24 15:23:32 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_DPRINTF_H
 # define FT_DPRINTF_H
 
-# include "../libft/libft.h"
-# include <unistd.h>
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdint.h>
+# include "libft_plus.h"
 
 // Print to given file descripter, based on template and converted values
 int		ft_dprintf(int fd, const char *format, ...);

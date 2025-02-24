@@ -6,18 +6,14 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 09:52:30 by ekeinan           #+#    #+#             */
-/*   Updated: 2025/02/11 17:05:52 by ekeinan          ###   ########.fr       */
+/*   Updated: 2025/02/24 15:23:10 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SET_NEXT_LINE_H
 # define SET_NEXT_LINE_H
 
-# include "../libft/libft.h"
-// ^ for strlen and bzero, previously declared in get_next_line
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdbool.h>
+# include "libft_plus.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42

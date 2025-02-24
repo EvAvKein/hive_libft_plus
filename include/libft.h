@@ -6,15 +6,14 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 08:37:29 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/22 16:19:53 by ekeinan          ###   ########.fr       */
+/*   Updated: 2025/02/24 15:23:24 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
+# include "libft_plus.h"
 
 /*						*
 	TRUTHINESS CHECKS
