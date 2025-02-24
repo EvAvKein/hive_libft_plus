@@ -1,6 +1,6 @@
 # LIBFT_PLUS
 
-My complete utility library for 42 Network's Hive Helsinki 🐝
+My complete utility library for studies at 42 Network's Hive Helsinki 🐝
 
 > [!TIP]
 > If you're at a 42 school: It's genuinely so much better to ask fellow students instead of reading online solutions ✨
