@@ -6,7 +6,7 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2025/02/24 15:31:05 by ekeinan          ###   ########.fr        #
+#    Updated: 2025/02/26 09:25:27 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ SET_NEXT_LINE_OBJ := $(SET_NEXT_LINE_SRC:%.c=$(SRC_DIR)/$(SET_NEXT_LINE_DIR)/%.o
 SRC := $(LIBFT_SRC) $(DPRINTF_DIR) $(SET_NEXT_LINE_SRC)
 OBJ := $(LIBFT_OBJ) $(DPRINTF_OBJ) $(SET_NEXT_LINE_OBJ)
 
-COMPILE_FLAGS := -Wall -Wextra -Werror -I$(HEADERS_DIR)
+COMPILE_FLAGS := -Wall -Wextra -Werror -I. -I$(HEADERS_DIR)
 
 %.o: %.c
 	$(CC) $(COMPILE_FLAGS) -c $< -o $@

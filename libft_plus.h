@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:32:42 by ekeinan           #+#    #+#             */
-/*   Updated: 2025/02/24 15:24:25 by ekeinan          ###   ########.fr       */
+/*   Updated: 2025/02/26 09:21:58 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <stdint.h>
 # include <stdarg.h>
 
-# include "libft.h"
-# include "ft_dprintf.h"
-# include "set_next_line.h"
+# include "include/libft.h"
+# include "include/ft_dprintf.h"
+# include "include/set_next_line.h"
 
 #endif
