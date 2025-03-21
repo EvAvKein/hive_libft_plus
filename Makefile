@@ -6,7 +6,7 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2025/02/26 09:25:27 by ekeinan          ###   ########.fr        #
+#    Updated: 2025/03/21 17:58:00 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,4 +72,4 @@ re: fclean all
 neat: $(NAME) clean
 	clear
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re neat
