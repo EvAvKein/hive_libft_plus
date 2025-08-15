@@ -6,11 +6,10 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2025/03/21 17:58:00 by ekeinan          ###   ########.fr        #
+#    Updated: 2025/08/15 19:10:22 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC=cc
 
 NAME := libft_plus.a
 SRC_DIR := src
@@ -51,6 +50,7 @@ SET_NEXT_LINE_OBJ := $(SET_NEXT_LINE_SRC:%.c=$(SRC_DIR)/$(SET_NEXT_LINE_DIR)/%.o
 SRC := $(LIBFT_SRC) $(DPRINTF_DIR) $(SET_NEXT_LINE_SRC)
 OBJ := $(LIBFT_OBJ) $(DPRINTF_OBJ) $(SET_NEXT_LINE_OBJ)
 
+CC := clang
 COMPILE_FLAGS := -Wall -Wextra -Werror -I. -I$(HEADERS_DIR)
 
 %.o: %.c
